@@ -7,8 +7,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 
 # Load the dataset
-url=https://drive.google.com/file/d/1cCkwiVv4mgfl20ntgY3n4yApcWqqZQe6/view?usp=sharing
+# Load the dataset from Google Drive using the direct download link
+url = 'https://drive.google.com/uc?export=download&id=1cCkwiVv4mgfl20ntgY3n4yApcWqqZQe6'
 movies_data = pd.read_csv(url, low_memory=False)
+
 
 selected_features = ['genres', 'keywords', 'tagline', 'cast', 'director']
 for feature in selected_features:
